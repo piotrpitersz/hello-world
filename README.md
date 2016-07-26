@@ -49,3 +49,15 @@ function bold() {
                 }
                 return tag_txt;
             }
+
+
+2b.------------------------------------------------
+
+function bold() {
+                var textArea = document.getElementById('txt');
+                var start = textArea.selectionStart;
+                var end = textArea.selectionEnd;
+                var replacement = '<del>' + textArea.value.substring(start, end) + '</del>';
+                textArea.value = textArea.value.substring(0, start) + replacement + textArea.value.substring(end, textArea.value.length);
+                return replacement;
+            }
