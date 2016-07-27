@@ -61,3 +61,18 @@ function bold() {
                 textArea.value = textArea.value.substring(0, start) + replacement + textArea.value.substring(end, textArea.value.length);
                 return replacement;
             }
+
+2c.-------------------------------------------------
+
+function bold() {
+                var el = document.getElementById('txt');
+                el.value = el.value.substring(0, el.selectionStart) + '<del>' + 
+                el.value.substring(el.selectionStart, el.selectionEnd) + '</del>' + el.value.substring(el.selectionEnd);
+}
+
+2d.--------------------------------------------------
+
+            function bold() {
+                var el = document.getElementById('txt');
+                el.value = el.value.slice(0, el.selectionStart) + '<del>' +  
+                el.value.slice(el.selectionStart, el.selectionEnd) + '</del>' + el.value.slice(el.selectionEnd);
